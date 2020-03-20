@@ -1,4 +1,4 @@
-
+<button mat-raised-button color="primary" [routerLink]="['/list']" >Lista usuarios</button>
 <form [formGroup]="hourForm" (ngSubmit)="createExtraHours($event)">
   <div class="example-container">
     <mat-form-field>
@@ -61,4 +61,4 @@
     <button mat-raised-button color="primary" [disabled]="hourForm.invalid" type="submit">Guardar</button>
   </div>
 </form>
-<button mat-raised-button color="primary" [routerLink]="['/list']" >Lista usuarios</button>
+
