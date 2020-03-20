@@ -1,0 +1,64 @@
+
+<form [formGroup]="hourForm" (ngSubmit)="createExtraHours($event)">
+  <div class="example-container">
+    <mat-form-field>
+      <mat-label>Documento</mat-label>
+      <input matInput formControlName="document" type="text">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Nombre completo</mat-label>
+      <input matInput formControlName="fullName" type="text">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Fecha inicial</mat-label>
+      <input matInput autocomplete="off" formControlName="initialDate" [matDatepicker]="initialDate">
+      <mat-datepicker-toggle matSuffix [for]="initialDate"></mat-datepicker-toggle>
+      <mat-datepicker #initialDate></mat-datepicker>
+    </mat-form-field>
+    <!-- <mat-form-field>
+      <mat-label>Fecha inicial</mat-label>
+      <input matInput formControlName="initialDate" type="text">
+    </mat-form-field> -->
+    <br>
+    <mat-form-field>
+      <mat-label>Fecha final</mat-label>
+      <input matInput autocomplete="off" formControlName="endDate" [matDatepicker]="endDate">
+      <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+      <mat-datepicker #endDate></mat-datepicker>
+    </mat-form-field>
+    <!-- <mat-form-field>
+      <mat-label>Fecha final</mat-label>
+      <input matInput formControlName="endDate" type="text">
+    </mat-form-field> -->
+    <br>
+    <mat-form-field>
+      <mat-label>Horario inicio de turno</mat-label>
+      <input matInput formControlName="startTime" type="text">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Horario fin de turno</mat-label>
+      <input matInput formControlName="endTime" type="text">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Horario Inicio hora extra</mat-label>
+      <input matInput formControlName="startTimeExtra" type="text">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Horario fin Hora extra</mat-label>
+      <input matInput formControlName="endTimeExtra" type="text">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Motivo hora extra</mat-label>
+      <textarea matInput formControlName="description" type="text"></textarea>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" [disabled]="hourForm.invalid" type="submit">Guardar</button>
+  </div>
+</form>
+<button mat-raised-button color="primary" [routerLink]="['/list']" >Lista usuarios</button>
